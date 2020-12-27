@@ -32,16 +32,22 @@ public class Manga {
 	int follow;  
 	String author;
 	
-	@ManyToMany
+	@OneToMany(mappedBy = "manga_id")
+	List<CategoryManga> categoryMangas;
 	
-	private Collection<Category> category;
-	public Collection<Category> getCategory() {
-		return category;
-	}
-
-	public void setCategory(Set<Category> category) {
-		this.category = category;
-	}
+//	@ManyToMany
+//	 @JoinTable(name = "category_manga", //Tạo ra một join Table tên là "address_person"
+//     joinColumns = @JoinColumn(name = "id_manga"),  // TRong đó, khóa ngoại chính là address_id trỏ tới class hiện tại (Address)
+//     inverseJoinColumns = @JoinColumn(name = "id_category") //Khóa ngoại thứ 2 trỏ tới thuộc tính ở dưới (Person)
+//)
+//	private Collection<Category> category;
+//	public Collection<Category> getCategory() {
+//		return category;
+//	}
+//
+//	public void setCategory(Set<Category> category) {
+//		this.category = category;
+//	}
 	@OneToMany(mappedBy = "manga")
 	List<Chapter> chapters;
 	@Column

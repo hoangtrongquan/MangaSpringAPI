@@ -2,6 +2,7 @@ package com.example.demo.model;
 
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.Entity;
@@ -9,6 +10,7 @@ import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
@@ -21,15 +23,18 @@ public class Category {
 	String name; 
 	String description;
 	
-	@ManyToMany( mappedBy = "category")
-	private Collection <Manga> mangas;
-	public Collection<Manga> getMangas() {
-		return mangas;
-	}
-
-	public void setMangas(Collection<Manga> mangas) {
-		this.mangas = mangas;
-	}
+	@OneToMany(mappedBy = "category_id")
+	List<CategoryManga> categoryMangas;
+	
+//	@ManyToMany( mappedBy = "category")
+//	private Collection <Manga> mangas;
+//	public Collection<Manga> getMangas() {
+//		return mangas;
+//	}
+//
+//	public void setMangas(Collection<Manga> mangas) {
+//		this.mangas = mangas;
+//	}
 
 	public int getId() {
 		return id;

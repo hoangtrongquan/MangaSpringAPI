@@ -18,8 +18,8 @@ public class User {
 	String avatar;
 	@OneToMany(mappedBy = "user")
 	List<Post> posts;
-	@Column(name = "ISADMIN")
-	boolean admin;
+	@Column(name = "IS_ADMIN")
+	boolean is_admin;
 	int enable;
 	
 	public int getId() {
@@ -59,10 +59,10 @@ public class User {
 		this.posts = posts;
 	}
 	public boolean isAdmin() {
-		return admin;
+		return is_admin;
 	}
 	public void setAdmin(boolean admin) {
-		this.admin = admin;
+		this.is_admin = admin;
 	}
 	public int getEnable() {
 		return enable;

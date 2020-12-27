@@ -15,6 +15,7 @@ import com.example.demo.model.Image;
 import com.example.demo.model.ImageDao;
 import com.example.demo.model.Manga;
 import com.example.demo.model.MangaDao;
+import com.example.demo.model.Post;
 import com.example.demo.model.PostDao;
 import com.example.demo.model.User;
 import com.example.demo.model.UserDao;
@@ -34,10 +35,23 @@ public class TestController {
 	ChapterDao ct;
 	@Autowired
 	ImageDao img;
+	
+	@RequestMapping("/test4")
+	public List<Manga> test4 () {
+		return mg.findAll();	
+	}
+	
 	@RequestMapping("/test")
 	public List<User> test () {
-		return ud.findAll();
+		return ud.findAll();	
 	}
+	
+	@RequestMapping("/test3")
+	public List<Post> test3 () {
+		return pd.findAll();
+		
+	}
+	
 	@RequestMapping("/test1")
 	public User test1 (@RequestParam int id) {
 		return ud.findById(id).get();
