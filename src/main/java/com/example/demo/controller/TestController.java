@@ -19,12 +19,6 @@ import com.example.demo.model.CategoryManga;
 import com.example.demo.model.Chapter;
 import com.example.demo.model.Image;
 import com.example.demo.model.Manga;
-<<<<<<< Updated upstream
-import com.example.demo.model.MangaDao;
-import com.example.demo.model.PostDao;
-=======
-import com.example.demo.model.Post;
->>>>>>> Stashed changes
 import com.example.demo.model.User;
 
 @RestController
@@ -42,8 +36,6 @@ public class TestController {
 	ChapterDao ct;
 	@Autowired
 	ImageDao img;
-<<<<<<< Updated upstream
-=======
 	@Autowired
 	CategoryMangaDao cmd;
 	
@@ -52,7 +44,7 @@ public class TestController {
 		return cmd.findAll();	
 	}
 	
->>>>>>> Stashed changes
+
 	@RequestMapping("/test")
 	public List<User> test () {
 		return ud.findAll();
