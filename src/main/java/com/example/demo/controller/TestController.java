@@ -7,17 +7,25 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.demo.dao.CategoryDao;
+import com.example.demo.dao.CategoryMangaDao;
+import com.example.demo.dao.ChapterDao;
+import com.example.demo.dao.ImageDao;
+import com.example.demo.dao.MangaDao;
+import com.example.demo.dao.PostDao;
+import com.example.demo.dao.UserDao;
 import com.example.demo.model.Category;
-import com.example.demo.model.CategoryDao;
+import com.example.demo.model.CategoryManga;
 import com.example.demo.model.Chapter;
-import com.example.demo.model.ChapterDao;
 import com.example.demo.model.Image;
-import com.example.demo.model.ImageDao;
 import com.example.demo.model.Manga;
+<<<<<<< Updated upstream
 import com.example.demo.model.MangaDao;
 import com.example.demo.model.PostDao;
+=======
+import com.example.demo.model.Post;
+>>>>>>> Stashed changes
 import com.example.demo.model.User;
-import com.example.demo.model.UserDao;
 
 @RestController
 public class TestController {
@@ -34,6 +42,17 @@ public class TestController {
 	ChapterDao ct;
 	@Autowired
 	ImageDao img;
+<<<<<<< Updated upstream
+=======
+	@Autowired
+	CategoryMangaDao cmd;
+	
+	@RequestMapping("/test4")
+	public List<CategoryManga> test4 () {
+		return cmd.findAll();	
+	}
+	
+>>>>>>> Stashed changes
 	@RequestMapping("/test")
 	public List<User> test () {
 		return ud.findAll();
