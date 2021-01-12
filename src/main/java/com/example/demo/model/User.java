@@ -18,7 +18,7 @@ public class User {
 	String avatar;
 	@OneToMany(mappedBy = "user")
 	List<Post> posts;
-	@Column(name = "ISADMIN")
+	@Column(name = "IS_ADMIN")
 	boolean admin;
 	int enable;
 	

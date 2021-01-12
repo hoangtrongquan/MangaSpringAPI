@@ -1,5 +1,6 @@
 package com.example.demo.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -10,13 +11,13 @@ public class CategoryManga {
 	@Id
 	int id;  
 
-	@ManyToOne()
-	@JoinColumn(name = "id_category", updatable = false, insertable = false)
-	Category category_id;
+	@ManyToOne
+	@Column(name = "id_category")
+	Category id_category;
 
-	@ManyToOne()
-	@JoinColumn(name = "id_manga", updatable = false, insertable = false)
-	Manga manga_id;
+	@ManyToOne
+	@Column(name = "id_manga")
+	Manga id_manga;
 
 	public CategoryManga() {}
 
@@ -24,25 +25,27 @@ public class CategoryManga {
 		return id;
 	}
 
+	public Category getId_category() {
+		return id_category;
+	}
+
+	public void setId_category(Category id_category) {
+		this.id_category = id_category;
+	}
+
+	public Manga getId_manga() {
+		return id_manga;
+	}
+
+	public void setId_manga(Manga id_manga) {
+		this.id_manga = id_manga;
+	}
+
 	public void setId(int id) {
 		this.id = id;
 	}
 
-	public Category getCategory_id() {
-		return category_id;
-	}
 
-	public void setCategory_id(Category category_id) {
-		this.category_id = category_id;
-	}
-
-	public Manga getManga_id() {
-		return manga_id;
-	}
-
-	public void setManga_id(Manga manga_id) {
-		this.manga_id = manga_id;
-	}
 
 
 

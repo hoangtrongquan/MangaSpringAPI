@@ -13,7 +13,7 @@ public class Post {
 	int id; 
 	String comment; 
 	@ManyToOne
-	@JoinColumn(name = "IDUSER")
+	@JoinColumn(name = "ID_USER")
 	User user;
 	public int getId() {
 		return id;

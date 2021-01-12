@@ -29,36 +29,38 @@ public class Manga {
 	String view; 
 	boolean status;
 	int like;  
+	
 	int follow;  
 	String author;
-	
-	@ManyToMany
-	
-	private Collection<Category> category;
-	public Collection<Category> getCategory() {
-		return category;
-	}
-
-	public void setCategory(Set<Category> category) {
-		this.category = category;
-	}
 	@OneToMany(mappedBy = "manga")
 	List<Chapter> chapters;
 	@Column
 	String create_by; 
 	@Column
-	Date create_at; 
+	Date create_at;
+	@Column
+	Date update_at;
+	String avatar; 
+	int id_observer;  
+	boolean enable;
+	
+	@OneToMany(mappedBy = "id_manga")
+	List<CategoryManga> category;
+	
+	
+	public List<CategoryManga> getCategory() {
+		return category;
+	}
+	public void setCategory(List<CategoryManga> category) {
+		this.category = category;
+	}
 	public List<Chapter> getChapters() {
 		return chapters;
 	}
 	public void setChapters(List<Chapter> chapters) {
 		this.chapters = chapters;
 	}
-	@Column
-	Date update_at;
-	String avatar; 
-	int id_observer;  
-	boolean enable;
+	
 	public int getId() {
 		return id;
 	}
