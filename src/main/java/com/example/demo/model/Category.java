@@ -1,16 +1,9 @@
 package com.example.demo.model;
 
-import java.util.Collection;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
@@ -23,18 +16,15 @@ public class Category {
 	String name; 
 	String description;
 	
-
-	@OneToMany(mappedBy = "id_category")
-	List<CategoryManga> mangas;
+	@ManyToMany(mappedBy = "category")
+	List<Manga> mangas;
 	
 
-	
-
-	public List<CategoryManga> getMangas() {
+	public List<Manga> getMangas() {
 		return mangas;
 	}
 
-	public void setMangas(List<CategoryManga> mangas) {
+	public void setMangas(List<Manga> mangas) {
 		this.mangas = mangas;
 	}
 
@@ -57,6 +47,7 @@ public class Category {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+	
 	@Override
 	public String toString() {
 		return "Category [id=" + id + ", name=" + name + ", description=" + description + "]";

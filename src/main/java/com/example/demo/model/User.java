@@ -19,7 +19,7 @@ public class User {
 	@OneToMany(mappedBy = "user")
 	List<Post> posts;
 	@Column(name = "IS_ADMIN")
-	boolean admin;
+	double admin;
 	int enable;
 	
 	public int getId() {
@@ -58,14 +58,21 @@ public class User {
 	public void setPosts(List<Post> posts) {
 		this.posts = posts;
 	}
-	public boolean isAdmin() {
-		return admin;
-	}
-	public void setAdmin(boolean admin) {
-		this.admin = admin;
-	}
+//	public boolean isAdmin() {
+//		return admin;
+//	}
+//	public void setAdmin(boolean admin) {
+//		this.admin = admin;
+//	}
+	
 	public int getEnable() {
 		return enable;
+	}
+	public double getAdmin() {
+		return admin;
+	}
+	public void setAdmin(double admin) {
+		this.admin = admin;
 	}
 	public void setEnable(int enable) {
 		this.enable = enable;

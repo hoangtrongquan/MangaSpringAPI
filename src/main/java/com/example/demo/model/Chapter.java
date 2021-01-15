@@ -15,9 +15,10 @@ public class Chapter {
 	int id;  
 	String name_chapter;
 	String update_day;
-	@ManyToOne()
+	@ManyToOne
 	@JoinColumn(name = "id_manga", updatable = false, insertable = false)
 	Manga manga;
+	
 	@OneToMany(mappedBy = "chap")
 	List<Image> imgs;
 	

@@ -13,7 +13,9 @@ public class Image {
 	@ManyToOne
 	@JoinColumn(name = "ID_CHAP",insertable = false,updatable = false)
 	Chapter chap;
+	
 	String img;
+	
 	public int getId() {
 		return id;
 	}
